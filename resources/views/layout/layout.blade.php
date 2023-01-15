@@ -11,7 +11,16 @@
     <meta name="description" content="Tailwind CSS News Template">
 
     <!-- Development css -->
-    <link rel="stylesheet" href="src/css/style.css">
+{{--    <link rel="stylesheet" href="storage/src/css/style.css">--}}
+
+    @vite(['resources/css/app.css', 'resources/js/app.js',
+            'resources/src/css/style.css',
+            'resources/src/vendors/hc-sticky/dist/hc-sticky.js',
+            'resources/src/vendors/glightbox/dist/js/glightbox.min.js',
+            'resources/src/vendors/@splidejs/splide/dist/js/splide.min.js',
+            'resources/src/vendors/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js',
+            'resources/src/js/theme.js',
+    ])
 
     <!-- Production css -->
     <!-- <link rel="stylesheet" href="dist/css/style.css"> -->
@@ -34,7 +43,7 @@
                     <!-- nav menu -->
                     <ul class="navbar hidden lg:flex lg:flex-row text-gray-400 text-sm items-center font-bold">
                         <li class="active relative border-l border-gray-800 hover:bg-gray-900">
-                            <a class="block py-3 px-6 border-b-2 border-transparent" href="index.html">Home</a>
+                            <a class="block py-3 px-6 border-b-2 border-transparent" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="dropdown relative border-l border-gray-800 hover:bg-gray-900">
                             <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Pages</a>
@@ -47,7 +56,7 @@
 
                                     <!--dropdown submenu-->
                                     <ul class="dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100" style="min-width: 12rem;">
-                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="index.html">Homepage 1</a></li>
+                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('home') }}">Homepage 1</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="index-2.html">Homepage 2</a></li>
                                     </ul>
                                 </li>
@@ -64,6 +73,9 @@
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="search.html">Search</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="page.html">Page</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('contact') }}">Contact</a></li>
+                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('login') }}">Login</a></li>
+                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('news') }}">News</a></li>
+                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('posts.index') }}">Post News</a></li>
                                     </ul>
                                 </li>
                                 <li class="subdropdown relative hover:bg-gray-50">
@@ -251,7 +263,7 @@
                 <div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
                     <div class="flex items-center mb-2">
                         <span class="text-3xl leading-normal mb-2 font-bold text-gray-100 mt-2">TailNews</span>
-                        <!-- <img src="src/img-min/logo.png" alt="LOGO"> -->
+                        <!-- <img src="storage/src/img-min/logo.png" alt="LOGO"> -->
                     </div>
                     <p>Tailwind News Template for build great newspapper, magazine and news portal.</p>
                     <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
@@ -351,13 +363,13 @@
 </a>
 
 <!--Vendor js-->
-<script src="src/vendors/hc-sticky/dist/hc-sticky.js"></script>
-<script src="src/vendors/glightbox/dist/js/glightbox.min.js"></script>
-<script src="src/vendors/@splidejs/splide/dist/js/splide.min.js"></script>
-<script src="src/vendors/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js"></script>
+<script src="storage/src/vendors/hc-sticky/dist/hc-sticky.js"></script>
+<script src="storage/src/vendors/glightbox/dist/js/glightbox.min.js"></script>
+<script src="storage/src/vendors/@splidejs/splide/dist/js/splide.min.js"></script>
+<script src="storage/src/vendors/@splidejs/splide-extension-video/dist/js/splide-extension-video.min.js"></script>
 
 <!-- Start development js -->
-<script src="src/js/theme.js"></script>
+<script src="storage/src/js/theme.js"></script>
 <!-- End development js -->
 
 <!-- Production js -->

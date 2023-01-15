@@ -35,12 +35,20 @@
 
                 <div class="flex-shrink max-w-full px-4 w-full  mb-6">
                     <label for="inpuemail4" class="inline-block mb-2">Email</label>
-                    <input type="email" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inpuemail4" required>
+                    <input type="email"
+                    class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white
+                        border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400
+                        focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
+                    id="inpuemail4" required>
                 </div>
 
                 <div class="flex-shrink max-w-full px-4 w-full  mb-6">
-                    <label for="inputfirst4" class="inline-block mb-2 text-red-600">Password</label>
-                    <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-red-600 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inputfirst4" required>
+                    <label for="inputfirst4" class="inline-block mb-2">Password</label>
+                    <input type="text"
+                    class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white
+                        border border-red-600 overflow-x-auto focus:outline-none focus:border-gray-400
+                        focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
+                    id="inputfirst4" required>
                 </div>
 
 
