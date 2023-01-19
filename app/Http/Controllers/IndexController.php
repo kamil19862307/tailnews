@@ -17,11 +17,6 @@ class IndexController extends Controller
         return view('contact');
     }
 
-    public function login()
-    {
-        return view('login');
-    }
-
     public function news()
     {
         $posts = Post::orderby('created_at', 'DESC')->limit(6)->get();

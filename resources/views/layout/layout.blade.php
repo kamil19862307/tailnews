@@ -65,6 +65,7 @@
                                         Pages
                                     </a>
 
+{{--                                    This thing is you are looking for--}}
                                     <!--dropdown submenu This thing is you are looking for-->
                                     <ul class="dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100" style="min-width: 12rem;">
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="404.html">404</a></li>
@@ -76,6 +77,13 @@
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('login') }}">Login</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('news') }}">News</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('posts.index') }}">Post News</a></li>
+                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('register') }}">Регистрация</a></li>
+                                        @auth('web')
+                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('logout') }}">Выйти</a></li>
+                                        @endauth
+                                        @guest('web')
+                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('login') }}">Войти</a></li>
+                                        @endguest
                                     </ul>
                                 </li>
                                 <li class="subdropdown relative hover:bg-gray-50">
