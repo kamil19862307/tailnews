@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('title', 'Авторизация')
+@section('title', 'Связаться с нами')
 @section('content')
 
 
@@ -16,13 +16,13 @@
 <div class="flex-shrink max-w-full w-full lg:w-1/3  overflow-hidden">
 <div class="w-full py-3">
     <h2 class="text-gray-800 text-3xl font-bold">
-        <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Login
+        <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Связаться с нами
     </h2>
 </div>
 <div class="flex flex-row flex-wrap -mx-3">
     <div class="flex-shrink max-w-full w-full px-3 pb-5">
         <div class="px-8 py-6 border border-gray-100 bg-white">
-            <form method="POST" action="{{ route('login_process') }}" class="flex flex-wrap flex-row -mx-4">
+            <form method="POST" action="{{ route('contact_form_process') }}" class="flex flex-wrap flex-row -mx-4">
                 @csrf
 
                 <div class="flex-shrink max-w-full px-4 w-full  mb-6">
@@ -44,16 +44,16 @@
                 </div>
 
                 <div class="flex-shrink max-w-full px-4 w-full  mb-6">
-                    <label for="inputfirst4" class="inline-block mb-2">Password</label>
-                    @error('password')
+                    <label for="inputfirst4" class="inline-block mb-2">Сообщение</label>
+                    @error('text')
                         <label class="inline-block mb-2 text-red-500">{{ $message }}</label>
                     @enderror
-                    <input name="password"
-                           type="password"
-                           value="{{ old('password') }}"
+                    <input name="text"
+                           type="text"
+                           value="{{ old('text') }}"
                             class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white
                              border border-gray-100 overflow-x-auto
-                            @error('password')
+                            @error('text')
                                 border-red-500
                             @enderror
                         focus:outline-none focus:border-gray-400
@@ -61,33 +61,12 @@
                             id="inputfirst4" required>
                 </div>
 
-
-
-                <div class="flex-shrink max-w-full px-4 w-full mb-6">
-                    <label class="flex items-center">
-                        <input type="checkbox" name="checked-demo" value="1" class="form-checkbox h-5 w-5 text-blue-500 dark:bg-gray-700 border border-gray-100 dark:border-gray-700 focus:outline-none">
-                        <span class="text-gray-700 ml-4">Запомнить меня</span>
-                    </label>
-                </div>
-                <div class="flex-shrink max-w-full px-4 w-full">
-                    <button type="submit" class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0">
-                        Войти
-                    </button>
-                </div>
                 <div class="flex-shrink max-w-full px-4 pt-7 w-full">
-                    <a href="{{ route('register') }}">
-                        <button type="button" class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0">
-                            Регистрация
+                        <button type="submit" class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0">
+                            Написать нам
                         </button>
-                    </a>
                 </div>
-                <div class="flex-shrink max-w-full px-4 pt-7 w-full">
-                    <a href="{{ route('forgot') }}">
-                        <button type="button" class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0">
-                            Забыл пароль
-                        </button>
-                    </a>
-                </div>
+
             </form>
         </div>
     </div>

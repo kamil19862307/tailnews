@@ -74,14 +74,13 @@
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="search.html">Search</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="page.html">Page</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('contact') }}">Contact</a></li>
-                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('login') }}">Login</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('news') }}">News</a></li>
                                         <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('posts.index') }}">Post News</a></li>
-                                        <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('register') }}">Регистрация</a></li>
                                         @auth('web')
-                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('logout') }}">Выйти</a></li>
+                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('logout') }}">Выйти - {{ auth('web')->user()->name }}</a></li>
                                         @endauth
                                         @guest('web')
+                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('register') }}">Регистрация</a></li>
                                             <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="{{ route('login') }}">Войти</a></li>
                                         @endguest
                                     </ul>

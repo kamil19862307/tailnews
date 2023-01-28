@@ -102,7 +102,7 @@
                                 <!-- author -->
                                 <div class="flex flex-wrap flex-row -mx-4 justify-center py-4">
                                     <div class="flex-shrink max-w-full px-4 w-1/3 sm:w-1/4 md:w-1/6">
-                                        <a href="#"><img class="rounded-full border max-w-full h-auto dark:border-gray-700" src="src/img/dummy/avatar.jpg" alt="author"></a>
+                                        <a href="#"><img class="rounded-full border max-w-full h-auto dark:border-gray-700" src="/storage/src/img/dummy/avatar.jpg" alt="author"></a>
                                     </div>
                                     <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-3/4 md:w-10/12">
                                         <!--name-->
@@ -116,145 +116,76 @@
                                     </div>
                                 </div>
 
-                                <!-- Comments -->
+                                <!-- Comments ---------------------------------------------------------------------------------------------------------->
                                 <div id="comments" class="pt-16">
                                     <!--title-->
                                     <h3 class="text-2xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">5 Comments</h3>
 
                                     <!--comment list-->
                                     <ol class="mb-4">
-                                        <li class="py-2 mt-6">
-                                            <div class="pb-4 border-b border-gray-200 dark:border-gray-600 border-dashed">
-                                                <footer>
-                                                    <img class="w-20 h-20 border border-gray-200 dark:border-gray-700 max-w-full float-left mr-4" src="src/img/avatar2.jpg" alt="avatar">
+
+                                        @foreach($post->comments as $comment)
+
+                                            <li class="py-2 mt-6">
+                                                <div class="pb-4 border-b border-gray-200 dark:border-gray-600 border-dashed">
+                                                    <footer>
+                                                        <img class="w-20 h-20 border border-gray-200 dark:border-gray-700 max-w-full float-left mr-4" src="/storage/src/img/avatar2.jpg" alt="avatar">
+                                                        <div>
+                                                            <a class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100" href="#" target="_blank">{{ $comment->user->name }}</a>
+                                                            <span class="md:float-right text-sm">
+                                                                <time datetime="2020-10-27">{{ substr($comment->created_at, 0, -8) }}</time>
+                                                            </span>
+                                                        </div>
+                                                    </footer>
                                                     <div>
-                                                        <a class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100" href="#" target="_blank">Carlos vila</a>
-                                                        <span class="md:float-right text-sm">
-                              <time datetime="2020-10-27">Oct 27, 2020</time>
-                            </span>
+                                                        <p>{{ $comment->text }}</p>
                                                     </div>
-                                                </footer>
-                                                <div>
-                                                    <p>I like this themes, fast loading and look profesional</p>
-                                                </div>
-                                                <div>
-                                                    <a class="text-red-700 hover:text-red-800" href="#comment-form">Reply</a>
-                                                </div>
-                                            </div>
-                                            <ul class="ml-12 md:ml-24">
-                                                <li class="py-2 mt-6">
-                                                    <div class="pb-4 border-b border-gray-200 dark:border-gray-600 border-dashed">
-                                                        <footer>
-                                                            <img class="w-20 h-20 border border-gray-200 dark:border-gray-700 max-w-full float-left mr-4" src="src/img/avatar.jpg" alt="avatar">
-                                                            <div>
-                                                                <a class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100" href="#" target="_blank">Ari Budin</a>
-                                                                <span class="md:float-right text-sm">
-                                  <time datetime="2020-10-27">Oct 27, 2020</time>
-                                </span>
-                                                            </div>
-                                                        </footer>
-                                                        <div>
-                                                            <p>Thank you Carlos!</p>
-                                                        </div>
-                                                        <div>
-                                                            <a class="text-red-700 hover:text-red-800" href="#comment-form">Reply</a>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="md:ml-24">
-                                                        <li class="py-2 mt-6" id="comment-5">
-                                                            <div class="pb-4 border-b border-gray-200 dark:border-gray-600 border-dashed">
-                                                                <footer>
-                                                                    <img class="w-20 h-20 border border-gray-200 dark:border-gray-700 max-w-full float-left mr-4" src="src/img/avatar2.jpg" alt="avatar">
-                                                                    <div>
-                                                                        <a class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100" href="#" target="_blank">Carlos vila</a>
-                                                                        <span class="md:float-right text-sm">
-                                      <time datetime="2020-10-27">Oct 27, 2020</time>
-                                    </span>
-                                                                    </div>
-                                                                </footer>
-                                                                <div>
-                                                                    <p>You're welcome!</p>
-                                                                </div>
-                                                                <div>
-                                                                    <a class="text-red-700 hover:text-red-800" href="#comment-form">Reply</a>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="py-2 mt-6">
-                                            <div class="pb-4 border-b border-gray-200 dark:border-gray-600 border-dashed">
-                                                <footer>
-                                                    <img class="w-20 h-20 border border-gray-200 dark:border-gray-700 max-w-full float-left mr-4" src="src/img/avatar.jpg" alt="avatar">
                                                     <div>
-                                                        <a class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100" href="#" target="_blank">Ari Budin</a>
-                                                        <span class="md:float-right text-sm">
-                              <time datetime="2020-10-27">Oct 27, 2020</time>
-                            </span>
+                                                        <a class="text-red-700 hover:text-red-800" href="#comment-form">Reply</a>
                                                     </div>
-                                                </footer>
-                                                <div>
-                                                    <p>Please support me with give positive rating!</p>
                                                 </div>
-                                                <div>
-                                                    <a class="text-red-700 hover:text-red-800" href="#comment-form">Reply</a>
-                                                </div>
-                                            </div>
-                                            <ul class="ml-12 md:ml-24">
-                                                <li class="py-2 mt-6">
-                                                    <div class="pb-4 border-b border-gray-200 dark:border-gray-600 border-dashed">
-                                                        <footer>
-                                                            <img class="w-20 h-20 border border-gray-200 dark:border-gray-700 max-w-full float-left mr-4" src="src/img/avatar2.jpg" alt="avatar">
-                                                            <div>
-                                                                <a class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100" href="#" target="_blank">Carlos vila</a>
-                                                                <span class="md:float-right text-sm">
-                                  <time datetime="2020-10-27">Oct 27, 2020</time>
-                                </span>
-                                                            </div>
-                                                        </footer>
-                                                        <div>
-                                                            <p>Yes Sure!</p>
-                                                        </div>
-                                                        <div>
-                                                            <a class="text-red-700 hover:text-red-800" href="#comment-form">Reply</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                            </li>
+
+                                       @endforeach
+
                                     </ol>
 
                                     <!--comment form-->
                                     <div id="comment-form" class="mt-12">
-                                        <h4 class="text-2xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">LEAVE A REPLY</h4>
-                                        <p class="mb-5">Your email address will not be published</p>
+                                        <h4 class="text-2xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">Оставить комментарий</h4>
+                                        <p class="mb-5">Your name email address and will not be published</p>
                                         <div>
-                                            <form action="#" novalidate="">
+                                            <form method="POST" action="{{ route('comment', $post->id) }}" novalidate="">
+                                                @csrf
+
                                                 <div class="mt-2"></div>
                                                 <div class="mb-6">
-                                                    <textarea class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" placeholder="Comment" aria-label="insert comment" rows="4" required=""></textarea>
+
+                                                    @error('text')
+                                                    <label class="inline-block mb-2 text-red-500">{{ $message }}</label>
+                                                    @enderror
+
                                                 </div>
                                                 <div class="mb-6">
-                                                    <input class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" placeholder="Name" aria-label="name" type="text" required="">
-                                                </div>
-                                                <div class="mb-6">
-                                                    <input class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" placeholder="Email" aria-label="email" type="text" required="">
-                                                </div>
-                                                <div class="mb-6">
-                                                    <input class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" placeholder="Website:" aria-label="website" type="text">
+                                                    <textarea class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none
+                                                    @error('text')
+                                                         border-red-600
+                                                    @enderror
+                                                    focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
+                                                              name='text' placeholder="Comment" aria-label="insert comment" rows="4" required=""></textarea>
                                                 </div>
                                                 <div class="mb-6">
                                                     <div>
-                                                        <input class="form-checkbox h-5 w-5 text-red-500 dark:bg-gray-700 border border-gray-100 dark:border-gray-700 focus:outline-none" id="comment-cookies" name="comment-cookies" type="checkbox" value="yes">
+                                                        <input class="form-checkbox h-5 w-5 text-red-500 dark:bg-gray-700 border border-gray-100 dark:border-gray-700
+                                                        focus:outline-none" id="comment-cookies" name="comment-cookies" type="checkbox" value="yes">
                                                         <label class="ml-2" for="comment-cookies">
                                                             Save my name, email, and website in this browser for the next time I comment.
                                                         </label>
                                                     </div>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <button type="submit" class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0">Post Comment</button>
+                                                    <button type="submit" class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0
+                                                    focus:outline-none focus:ring-0">Post Comment</button>
                                                 </div>
                                             </form>
                                         </div>

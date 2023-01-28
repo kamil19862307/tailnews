@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ForgotFormRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,28 @@ class AuthController extends Controller
         auth('web')->logout();
 
         return redirect(route('home'));
+    }
+
+    public function showForgotForm()
+    {
+        return view('auth.forgot');
+    }
+
+    public function forgot(ForgotFormRequest $request)
+    {
+        $data = $request->validated();
+
+        $user = User::where(['email' => $data['email']])->first();
+
+        $password_new = uniqid();
+
+        $user->password = bcrypt($password_new);
+
+        $user->save();
+
+        session()->flash('password_new', $password_new);
+
+        return redirect(route('forgot'));
     }
 
     public function showRegisterForm()
@@ -58,4 +81,5 @@ class AuthController extends Controller
 
         return redirect(route('login'))->withErrors(['email' => 'Проль не найден, либо данные введены неправильно']);
     }
+
 }
