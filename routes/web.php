@@ -49,3 +49,5 @@ Route::middleware('guest')->group(function(){
 
 });
 
+Route::get('show', [IndexController::class, 'showEdit'])->name('show_edit');
+Route::get('edit', [IndexController::class, 'edit'])->name('edit');

@@ -40,4 +40,14 @@ class IndexController extends Controller
             'posts' => $posts,
         ]);
     }
+
+    public function showEdit()
+    {
+        return view('admin.show_edit');
+    }
+
+    public function edit()
+    {
+        return view('admin.edit');
+    }
 }
