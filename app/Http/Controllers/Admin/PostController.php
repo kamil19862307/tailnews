@@ -92,6 +92,8 @@ class PostController extends Controller
 
         $post->update($data);
 
+        session()->flash('edit_status', 'Статья '. $data['title'] .' успешно отредактированна');
+
         return redirect(route('admin.posts.index'));
     }
 

@@ -59,6 +59,11 @@
                             </div>
 
                             <div id="free-plugins" class="mb-1 2">
+
+                                @if(session()->has('edit_status'))
+                                    <p class="mb-4">{{ session('edit_status') }}</p>
+                                @endif
+
                                 <div class="tabless">
                                     <table class="table-auto">
                                         <thead class="bg-gray-100">
